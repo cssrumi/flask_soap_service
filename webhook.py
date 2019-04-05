@@ -6,7 +6,6 @@ from spyne.model.complex import ComplexModel
 
 app = Flask(__name__)
 spyne = Spyne(app)
-balance = 10000.0
 
 
 class PersonModel(ComplexModel):
@@ -41,7 +40,6 @@ class PaymentService(spyne.Service):
     __in_protocol__ = Soap11(validator='lxml')
     __out_protocol__ = Soap11()
 
-    # @staticmethod
     @spyne.srpc(PaymentModel, SenderModel, ReceiverModel, _returns=ResponseModel)
     def SendPayment(Payment, Sender, Receiver):
         response = ResponseModel()
