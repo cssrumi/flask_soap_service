@@ -53,4 +53,4 @@ class PaymentService(spyne.Service):
 
 
 if __name__ == '__main__':
-    app.run(host='10.111.120.121')
+    app.run(host='localhost')
